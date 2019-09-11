@@ -1,3 +1,9 @@
+/*
+
+Author : Ashokk Elumalai
+
+*/
+
 #include<iostream>
 using namespace std;
 
