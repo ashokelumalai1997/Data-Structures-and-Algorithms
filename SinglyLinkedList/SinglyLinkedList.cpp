@@ -140,13 +140,27 @@ void deleteAtPosition(int position)
 	previous->next=next;
 	
 }
+void reverse()
+{
+	Node* current = head;
+	Node* previous = NULL;
+	Node* Next = NULL;
+	while(current != NULL)
+	{
+		Next = current->next;
+		current->next = previous;
+		previous = current;
+		current = Next;
+	}
+	head = previous;
+}
 int main()
 {
 	int option,choice=1;
 	cout<<"\n******************************************************************************";
 	while(choice)
 	{
-		cout<<"\nEnter your option \n\n1.Insert Node at End \n\n2.Delete Node at End \n\n3.Print the Linked list \n\n4.Insert Node at specific Position \n\n5.Delete Node at specific position \n\n6.Get length of the list  \n\nAny other value to exit...";
+		cout<<"\nEnter your option \n\n1.Insert Node at End \n\n2.Delete Node at End \n\n3.Print the Linked list \n\n4.Insert Node at specific Position \n\n5.Delete Node at specific position \n\n6.Get length of the list  \n\n7.Reverse the list \n\nAny other value to exit...";
 		cin>>option;
 		switch(option)
 		{
@@ -179,6 +193,9 @@ int main()
 				int count;
 				count=getCount();
 				cout<<count<<"\n";
+				break;
+			case 7:
+				reverse();
 				break;
 			default:
 				choice = 0;
